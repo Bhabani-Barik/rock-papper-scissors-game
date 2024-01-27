@@ -4,8 +4,8 @@ let compScore = 0;
 const choices = document.querySelectorAll(".choice");
 
 choices.forEach((choice) => {
-    console.log(choice);
     choice.addEventListener("click", () => {
-    console.log("choice was clicked");
+        const choiceId = choice.getAttribute("id");
+        console.log("choice was clicked",choiceId);
     });
 });
