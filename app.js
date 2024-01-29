@@ -14,6 +14,9 @@ const genComputerhoice = () => {
 // Generate User's choice 
 const playGame = (userChoice) => {
     console.log("User Choice = ", userChoice);
+    //Generate computer choice 
+    const compChoice = genComputerhoice();
+    console.log("Computer Choice = ", compChoice);
 }
 
 choices.forEach((choice) => {
