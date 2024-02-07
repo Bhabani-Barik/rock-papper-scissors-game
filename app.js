@@ -2,6 +2,7 @@ let userScore = 0;
 let compScore = 0;
 
 const choices = document.querySelectorAll(".choice");
+const msg = document.querySelector("#msg");
 
 // Generate computer's choice
 const genComputerChoice = () => {
@@ -12,13 +13,19 @@ const genComputerChoice = () => {
 
 const drawGame = () => {
   console.log("Game was draw.");
+  msg.innerText = "Game was Draw. Play again.";
+  msg.style.backgroundColor = "#081b31";
 }
 
 const showWinner = (userWin) => {
   if(userWin){
     console.log("You Win!");
+    msg.innerText = "You Win !";
+    msg.style.backgroundColor = "green";
   }else {
     console.log("You Lose :(");
+    msg.innerText = "You Lose :(";
+    msg.style.backgroundColor = "red";
   }
 }
 
@@ -46,7 +53,7 @@ const playGame = (userChoice) => {
       //rock , paper
       userWin = compChoice === "rock" ? false : true;
     }
-    showWinner(userWin);
+    showWinner(userWin, userChoice, compChoice);
   }
 };
 
