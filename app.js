@@ -14,6 +14,15 @@ const drawGame = () => {
   console.log("Game was draw.");
 }
 
+const showWinner = (userWin) => {
+  if(userWin){
+    console.log("You Win!");
+  }else {
+    console.log("You Lose :(");
+  }
+}
+
+
 // Generate User's choice
 const playGame = (userChoice) => {
   console.log("User Choice = ", userChoice);
@@ -25,7 +34,19 @@ const playGame = (userChoice) => {
   if (userChoice === compChoice) {
     //Draw Game
     drawGame();
-
+  } else {
+    let userWin = true;
+    if(userChoice === "rock"){
+      //scissors, paper
+      userWin = compChoice === "paper" ? false : true;
+    } else if(userChoice === "paper"){
+      // rock, scissors 
+      userWin = compChoice === "scissors" ? false : true;
+    } else {
+      //rock , paper
+      userWin = compChoice === "rock" ? false : true;
+    }
+    showWinner(userWin);
   }
 };
 
